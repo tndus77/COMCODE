@@ -7,26 +7,35 @@
 // #1 simple function
 function calculate(command, a, b) {
     switch(command) {
+        /* switch를 쓴 것은 좋았으나 'add', '-' 등 단어와 기호를 섞어 놓았던 이유는
+            여러 개를 동시에 처리하는 경우를 보기 위해서 였어요. */
         case "add":
+        case '+':
             return a + b;
             break;
+        case 'subtract':
         case "-":
             return a - b;
             break;
         case "multiply":
+        case '*':
             return a * b;
             break;
+        case 'divide':
         case "/":
             if(b != 0)
                 return a / b;
             else
                 return "Wrong command!"
+            // 0으로 나눌 때의 처리도 잘했어요
             break;
+        case 'remainder':
         case "%":
             return a % b;
             break;
         default:
             return "Wrong command!";
+            break;
     }
     
 }
@@ -37,6 +46,10 @@ console.log('result: ' + calculate("multiply", 1, 3));
 console.log('result: ' + calculate("/", 4, 2));
 console.log('result: ' + calculate("%", 5, 3));
 console.log('result: ' + calculate("]", 1, 3));
+
+
+/* 여러 가지 함수 선언도 잘 연습했습니다. 
+    새로운 함수 선언과 좀 더 친해지는 시간이 됐길 바랍니다. */
 
 // #2 Return a value
 function add(a, b) {
